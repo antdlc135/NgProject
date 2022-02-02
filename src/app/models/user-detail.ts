@@ -33,7 +33,7 @@ export interface UserDetails {
   Address: location;
   Role: keyof typeof role;
   username: string;
-  profilePhotoUrl: string;
+  profilePhotoUrl?: string;
   companies?: company[];
   Gender: keyof typeof gender;
 }

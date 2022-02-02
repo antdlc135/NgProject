@@ -2,7 +2,7 @@
   <h4 class="py-3">user-list.component</h4>
   <ol>
     <li class="m-1 p-4 text-start" *ngFor="let rep of users">
-      <app-user-single [rep]="rep"></app-user-single>
+      <app-user-single [rep]="rep" (remove)="deleteU($event)"></app-user-single>
     </li>
   </ol>
 </div>

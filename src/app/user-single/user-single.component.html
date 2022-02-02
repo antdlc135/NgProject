@@ -1,3 +1,10 @@
-<img src="{{ rep.profilePhotoUrl }} " alt="" style="width: 20%" />
-<span class="fw-bold p-2">{{ rep.Name }} {{ rep.Surname }}</span>
-<span class="p-2">{{ rep.Age }} {{ rep.Address.City }} </span>
+<div #user *ngIf="rep; else noUser" class="p-4">
+  <img src="{{ rep.profilePhotoUrl }} " alt="" style="width: 20%" />
+  <span class="fw-bold p-2">{{ rep.Name }} {{ rep.Surname }}</span>
+  <span class="p-2">{{ rep.Age }} {{ rep.Address.City }} </span>
+  <button type="submit" (onclick)="deleteUser(rep)">Delete</button>
+</div>
+
+<ng-template #noUser>
+  <div *ngIf="!rep" class="p-4">order-detail.component</div>
+</ng-template>

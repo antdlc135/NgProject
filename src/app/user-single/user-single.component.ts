@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserDetails } from '@app/models/user-detail';
-import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 @Component({
   selector: 'app-user-single',
@@ -9,7 +8,12 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
 })
 export class UserSingleComponent implements OnInit {
   @Input() rep!: UserDetails;
+  @Output() remove = new EventEmitter<UserDetails>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  deleteUser(user: UserDetails) {
+    this.remove.emit(user);
+  }
 }
