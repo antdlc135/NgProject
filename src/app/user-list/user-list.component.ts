@@ -1,8 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { users } from '@app/data/users-data';
 import { UserDetails } from '@app/models/user-detail';
-import { findIndex } from 'rxjs';
-import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 @Component({
   selector: 'app-user-list',
@@ -10,13 +8,14 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-  @Output() users = users;
+  users = users;
   deleted!: UserDetails;
   constructor() {}
 
   ngOnInit(): void {}
 
   deleteU(user: UserDetails) {
-    this.deleted = user;
+    this.users.splice(users.indexOf(user), 1);
+    console.log('from parent', user);
   }
 }

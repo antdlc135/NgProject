@@ -8,12 +8,13 @@ import { UserDetails } from '@app/models/user-detail';
 })
 export class UserSingleComponent implements OnInit {
   @Input() rep!: UserDetails;
-  @Output() remove = new EventEmitter<UserDetails>();
+  @Output() remove: EventEmitter<UserDetails> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
   deleteUser(user: UserDetails) {
     this.remove.emit(user);
+    console.log('from child: ', user);
   }
 }
