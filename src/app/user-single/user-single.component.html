@@ -1,4 +1,13 @@
-<div #user *ngIf="rep; else noUser" class="p-4">
+<div
+  #user
+  *ngIf="rep; else noUser"
+  class="p-4 border border-5"
+  [ngClass]="{
+    'border-primary': rep.Role === 'staff',
+    'border-info': rep.Role === 'manager',
+    'border-secondary': rep.Role === 'admin'
+  }"
+>
   <img src="{{ rep.profilePhotoUrl }} " alt="" style="width: 20%" />
   <span class="fw-bold p-2">{{ rep.Name }} {{ rep.Surname }}</span>
   <span class="p-2">{{ rep.Age }} {{ rep.Address.City }} </span>
@@ -6,5 +15,5 @@
 </div>
 
 <ng-template #noUser>
-  <div class="p-4">order-detail.component</div>
+  <div class="p-4">user.single-component</div>
 </ng-template>
