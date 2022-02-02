@@ -1,8 +1,12 @@
 <div class="container-fluid h-100">
   <h4 class="py-3">user-list.component</h4>
-  <ol>
+  <ol *ngIf="users.length; else noUser">
     <li class="m-1 p-4 text-start" *ngFor="let rep of users">
       <app-user-single [rep]="rep" (remove)="deleteU($event)"></app-user-single>
     </li>
   </ol>
 </div>
+
+<ng-template #noUser>
+  <div class="p-4 noUser">Non sono presenti utenti!</div>
+</ng-template>
