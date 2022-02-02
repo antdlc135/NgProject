@@ -34,6 +34,6 @@ export interface UserDetails {
   Role: keyof typeof role;
   username: string;
   profilePhotoUrl: string;
-  companies: company[];
+  companies?: company[];
   Gender: keyof typeof gender;
 }

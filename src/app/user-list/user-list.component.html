@@ -1,7 +1,10 @@
 <div class="container-fluid h-100">
   <h4 class="py-3">user-list.component</h4>
-  <app-user-single
-    class="m-1"
-    *ngFor="let rep of [1, 2, 3, 4, 5]"
-  ></app-user-single>
+  <ol>
+    <li class="m-1 p-4 text-start" *ngFor="let rep of users">
+      <img src="{{ rep.profilePhotoUrl }} " alt="" style="width: 20%" />
+      <span class="fw-bold p-2">{{ rep.Name }} {{ rep.Surname }}</span>
+      <span class="p-2">{{ rep.Age }} {{ rep.Address.City }} </span>
+    </li>
+  </ol>
 </div>
