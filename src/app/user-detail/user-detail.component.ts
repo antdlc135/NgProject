@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserDetails } from '@app/models/user-detail';
 import { formatDate } from '@angular/common';
+import { users } from '@app/data/users-data';
 
 @Component({
   selector: 'app-user-detail',
@@ -8,50 +9,10 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
-  users: UserDetails[] = [
-    {
-      id: 3487,
-      Name: 'Mario',
-      Surname: 'Rossi',
-      Age: 30,
-      ['Date of Birth']: '1995/12/14',
-      Address: {
-        City: 'Roma',
-        Street: 'Via roma 10',
-        PostalCode: '00100',
-      },
-      Role: 'staff',
-      username: 'MarioRossi80',
-      profilePhotoUrl: 'https://bit.ly/3yRngEP',
-      companies: [
-        {
-          id: 148979,
-          name: 'Develhope',
-          description: 'La migliore',
-          location: {
-            City: 'Palermo',
-            Street: 'Via Libertà 58',
-            PostalCode: '90139',
-          },
-        },
-        {
-          id: 123123,
-          name: 'Apple',
-          description: 'Eh insomma...',
-          location: {
-            City: 'Cupertino',
-            Street: 'One Apple Park Way',
-            PostalCode: '95014',
-          },
-        },
-      ],
-      Gender: 'male',
-    },
-  ];
-
+  users: UserDetails[] = users;
   ImagePath: string = '';
   Date: string = '';
-
+  @Input() rep!: UserDetails;
   constructor() {}
 
   ngOnInit(): void {}

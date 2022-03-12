@@ -1,6 +1,6 @@
 <h2>user-container.component</h2>
 
 <div class="row h-100 py-5">
-  <app-user-list class="col-7"></app-user-list>
-  <app-user-detail class="col-5"></app-user-detail>
+  <app-user-list class="col-7" (getUser)="sendUser($event)"></app-user-list>
+  <app-user-detail class="col-5" [rep]="rep"></app-user-detail>
 </div>
