@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDetails } from '../models/user-detail';
+import { UserDetails } from '@app/models/user-detail';
 
 @Component({
   selector: 'app-user-container',
