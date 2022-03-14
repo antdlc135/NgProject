@@ -9,15 +9,15 @@ import { UserDetails } from '@app/models/user-detail';
 })
 export class UserListComponent implements OnInit {
   @Output() getUser: EventEmitter<UserDetails> = new EventEmitter();
+  @Output() deleteUser: EventEmitter<UserDetails> = new EventEmitter();
   users = users;
   deleted!: UserDetails;
   constructor() {}
 
-  ngOnInit(): void {
-    this.getUser.emit(users[0]);
-  }
+  ngOnInit(): void {}
 
   deleteU(user: UserDetails) {
+    this.deleteUser.emit(user);
     this.users.splice(users.indexOf(user), 1);
     console.log('from parent', user);
   }

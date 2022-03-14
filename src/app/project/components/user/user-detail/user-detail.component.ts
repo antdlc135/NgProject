@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserDetails } from '@app/models/user-detail';
 import { formatDate } from '@angular/common';
 import { users } from '@app/data/users-data';
+import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-detail',
@@ -9,6 +10,8 @@ import { users } from '@app/data/users-data';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  @Output() closeDetails: EventEmitter<false> = new EventEmitter();
+  fa = faDoorOpen;
   users: UserDetails[] = users;
   ImagePath: string = '';
   Date: string = '';
@@ -50,5 +53,9 @@ export class UserDetailComponent implements OnInit {
       }
     });
     return address;
+  }
+
+  close(ctrl: false) {
+    this.closeDetails.emit(ctrl);
   }
 }

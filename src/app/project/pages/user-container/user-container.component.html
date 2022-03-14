@@ -1,6 +1,18 @@
-<h2>user-container.component</h2>
-
-<div class="row h-100 py-5">
-  <app-user-list class="col-7" (getUser)="sendUser($event)"></app-user-list>
-  <app-user-detail class="col-5" [rep]="rep"></app-user-detail>
+<div
+  class="d-flex justify-content-center bg-primary bg-opacity-25 border border-primary p-5"
+  style="min-height: 80vh; width: 60vw"
+>
+  <div class="row">
+    <app-user-list
+      [ngClass]="{ 'col-6': rep, 'col-12': !rep }"
+      (getUser)="sendUser($event)"
+      (deleteUser)="removeUser($event)"
+    ></app-user-list>
+    <div class="col-6" *ngIf="rep">
+      <app-user-detail
+        [rep]="rep"
+        (closeDetails)="removeUser($event)"
+      ></app-user-detail>
+    </div>
+  </div>
 </div>

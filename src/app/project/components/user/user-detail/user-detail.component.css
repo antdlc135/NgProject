@@ -1,3 +1,11 @@
-.container-fluid {
+.cont {
   background-color: rgb(233, 233, 177);
+  position: relative;
+}
+
+fa-icon {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  cursor: pointer;
 }

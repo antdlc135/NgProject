@@ -7,12 +7,16 @@ import { UserDetails } from '@app/models/user-detail';
   styleUrls: ['./user-container.component.css'],
 })
 export class UserContainerComponent implements OnInit {
-  rep!: UserDetails;
+  rep!: UserDetails | false;
   constructor() {}
 
   ngOnInit(): void {}
 
   sendUser(user: UserDetails) {
     this.rep = user;
+  }
+
+  removeUser(ctrl: UserDetails | false) {
+    if (this.rep === ctrl || ctrl === false) this.rep = false;
   }
 }

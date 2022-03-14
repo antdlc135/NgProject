@@ -1,28 +1,29 @@
-<div class="container-fluid border border-warning h-100">
-  <h4 class="py-3 text-wrap">user-detail.component</h4>
+<div class="cont border border-warning p-2">
+  <fa-icon [icon]="fa" (click)="close(false)" size="lg"></fa-icon>
+  <div class="row">
+    <!-- registry -->
+    <ul class="text-start col" style="list-style-type: none">
+      <li class="p-1" *ngFor="let item of getObjectRegistry(rep)">
+        {{ item }}
+      </li>
+      <li class="p-1">{{ Date }}</li>
+    </ul>
 
-  <!-- registry -->
-  <ul class="text-start" style="list-style-type: none">
-    <li class="p-1" *ngFor="let item of getObjectRegistry(rep)">
-      {{ item }}
-    </li>
-    <li class="p-1">{{ Date }}</li>
-  </ul>
+    <!-- address -->
+    <h5 class="fw-bold text-start">Address:</h5>
+    <ul class="text-start" style="list-style-type: none">
+      <li class="p-1" *ngFor="let item of getObjectAddress(rep)">
+        {{ item }}
+      </li>
+    </ul>
 
-  <!-- address -->
-  <h4 class="fw-bold text-start">Address:</h4>
-  <ul class="text-start" style="list-style-type: none">
-    <li class="p-1" *ngFor="let item of getObjectAddress(rep)">
-      {{ item }}
-    </li>
-  </ul>
-  <img src="{{ ImagePath }} " alt="" style="width: 80%" />
-
-  <!-- companies -->
-  <div *ngFor="let item of rep.companies">
+    <!-- companies -->
+    <!-- <div *ngFor="let item of rep.companies">
     <h4 class="fw-bold text-start my-4">Company: {{ item.name }}</h4>
     <ul class="text-start" style="list-style-type: none">
       <li>Description: {{ item.description }}</li>
     </ul>
+  </div> -->
   </div>
+  <img class="row px-4" src="{{ ImagePath }} " alt="" style="width: 60%" />
 </div>
