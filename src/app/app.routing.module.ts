@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'projects/user', pathMatch: 'full' },
+  { path: '', redirectTo: 'project/user', pathMatch: 'full' },
   { path: '', component: ProjectComponent },
-  { path: '**', redirectTo: 'projects/user' },
+  { path: '**', redirectTo: 'project/404-ERROR' },
 ];
 
 @NgModule({

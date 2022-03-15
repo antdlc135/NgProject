@@ -12,10 +12,10 @@
   <span class="fw-bold p-2">{{ rep.Name }} {{ rep.Surname }}</span>
   <span class="p-2">{{ rep.Age }} {{ rep.Address.City }} </span>
   <div class="m-3 p-2">
-    <button type="button" (click)="deleteUser(rep)">Remove User</button>
-    <button type="button" (click)="sendUserDetail(rep)" class="ms-5">
-      See more...
+    <button type="button" class="btn-danger" (click)="deleteUser(rep)">
+      Remove User
     </button>
+    <ng-content></ng-content>
   </div>
 </div>
 

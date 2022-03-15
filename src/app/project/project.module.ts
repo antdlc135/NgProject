@@ -11,6 +11,7 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
 import { OrderListComponent } from '@app/project/components/order/order-list/order-list.component';
 import { OrderSingleComponent } from '@app/project/components/order/order-single/order-single.component';
+import { PageNotFoundComponent } from '@app/project/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { OrderSingleComponent } from '@app/project/components/order/order-single
     OrderContainerComponent,
     UserListComponent,
     UserDetailComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     ProjectRoutingModule,

@@ -1,11 +1,11 @@
 <div class="cont">
   <ol *ngIf="users.length; else noUser">
     <li class="p-3 text-start" *ngFor="let rep of users">
-      <app-user-single
-        [rep]="rep"
-        (remove)="deleteU($event)"
-        (send)="getU($event)"
-      ></app-user-single>
+      <app-user-single [rep]="rep" (remove)="deleteU($event)"
+        ><button type="button" (click)="getU(rep)" class="ms-5">
+          See more...
+        </button></app-user-single
+      >
     </li>
   </ol>
 </div>

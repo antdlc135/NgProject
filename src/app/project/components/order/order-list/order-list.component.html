@@ -1,5 +1,5 @@
 <div class="cont">
   <div class="d-flex flex-column justify-content-center gap-5 p-4">
-    <app-order-single *ngFor="let rep of [1, 2, 3]"></app-order-single>
+    <app-order-single *ngFor="let rep of users" [rep]="rep"></app-order-single>
   </div>
 </div>

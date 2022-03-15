@@ -1,6 +1,10 @@
 <div class="container-fluid p-4">
   <div class="row p-4">
-    <app-user-single class="col"></app-user-single>
-    <app-order-detail class="col"></app-order-detail>
+    <app-user-single [rep]="rep" class="col" (remove)="deleteU($event)"
+      ><button type="button" (click)="redirectTo()" class="ms-5">
+        See more...
+      </button></app-user-single
+    >
+    <app-order-detail class="col">{{ rep.Role }} </app-order-detail>
   </div>
 </div>
